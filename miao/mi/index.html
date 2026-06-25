@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小米商城风格页面</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: #f5f5f5;
+    }
+    ::selection {
+      background: #ff6900;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- 顶部公告栏 -->
+  <div class="w-full bg-gray-900 text-gray-200 text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <p>小米商城 2026 新春优惠季 | 全场最高立减 1000 元</p>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#" class="hover:text-white">登录</a>
+        <span class="text-gray-500">|</span>
+        <a href="#" class="hover:text-white">注册</a>
+        <span class="text-gray-500">|</span>
+        <a href="#" class="hover:text-white">我的订单</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 头部导航 -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="h-20 flex items-center gap-6">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <div class="w-10 h-10 rounded-lg bg-orange-500 flex items-center justify-center text-white font-bold text-xl">
+            mi
+          </div>
+          <div>
+            <p class="text-lg font-bold leading-none">小米商城</p>
+            <p class="text-xs text-gray-500 mt-1">Xiaomi Store</p>
+          </div>
+        </a>
+
+        <!-- 导航菜单 -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700">
+          <a href="#" class="hover:text-orange-500 transition">手机</a>
+          <a href="#" class="hover:text-orange-500 transition">电视</a>
+          <a href="#" class="hover:text-orange-500 transition">笔记本</a>
+          <a href="#" class="hover:text-orange-500 transition">智能家居</a>
+          <a href="#" class="hover:text-orange-500 transition">穿戴</a>
+          <a href="#" class="hover:text-orange-500 transition">家电</a>
+        </nav>
+
+        <!-- 搜索框 -->
+        <div class="ml-auto flex-1 max-w-xl">
+          <div class="flex items-center bg-gray-100 rounded-full overflow-hidden border border-transparent focus-within:border-orange-500 transition">
+            <input
+              type="text"
+              placeholder="搜索商品名称"
+              class="w-full px-5 py-3 bg-transparent outline-none text-sm"
+            />
+            <button class="px-5 py-3 bg-orange-500 text-white text-sm font-medium hover:bg-orange-600 transition">
+              搜索
+            </button>
+          </div>
+        </div>
+
+        <!-- 右侧功能 -->
+        <div class="hidden md:flex items-center gap-4 shrink-0 text-sm">
+          <a href="#" class="hover:text-orange-500 transition">消息</a>
+          <a href="#" class="hover:text-orange-500 transition">客服</a>
+          <a href="#" class="px-4 py-2 rounded-full bg-orange-500 text-white hover:bg-orange-600 transition">
+            购物车
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分类条 -->
+    <div class="border-t bg-white">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex gap-4 overflow-x-auto py-3 text-sm whitespace-nowrap">
+          <a href="#" class="px-4 py-2 rounded-full bg-orange-50 text-orange-500 font-medium">推荐</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">手机</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">平板</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">笔记本</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">智能穿戴</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">耳机音箱</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">冰洗厨卫</a>
+          <a href="#" class="px-4 py-2 rounded-full hover:bg-gray-100">生活家电</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主视觉 Banner -->
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- 左侧大图 -->
+      <div class="lg:col-span-8 rounded-3xl overflow-hidden shadow-lg relative min-h-[320px]">
+        <img
+          src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
+          alt="Banner"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-transparent"></div>
+        <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-center text-white">
+          <p class="inline-flex w-fit px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm text-sm mb-4">
+            旗舰新品 · 限时优惠
+          </p>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight max-w-xl">
+            小米 15 Ultra
+            <span class="block mt-2 text-orange-400">影像旗舰，实力进阶</span>
+          </h1>
+          <p class="mt-4 text-sm md:text-base text-gray-200 max-w-lg">
+            2K 超视网膜屏、超大底主摄、澎湃性能，开启全新移动影像体验。
+          </p>
+          <div class="mt-8 flex gap-4">
+            <a href="#" class="px-6 py-3 rounded-full bg-orange-500 text-white font-medium hover:bg-orange-600 transition">
+              立即选购
+            </a>
+            <a href="#" class="px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm text-white font-medium hover:bg-white/25 transition">
+              查看详情
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧促销卡 -->
+      <div class="lg:col-span-4 grid gap-6">
+        <div class="rounded-3xl bg-white shadow-md overflow-hidden p-6 flex flex-col justify-between min-h-[150px]">
+          <div>
+            <p class="text-orange-500 font-semibold">智能家居</p>
+            <h3 class="text-2xl font-bold mt-2">全屋智能方案</h3>
+            <p class="text-gray-500 mt-2 text-sm">门锁、摄像头、传感器一站配齐</p>
+          </div>
+          <a href="#" class="mt-4 text-orange-500 font-medium hover:underline">去看看 →</a>
+        </div>
+
+        <div class="rounded-3xl bg-gray-900 text-white shadow-md overflow-hidden p-6 relative min-h-[150px]">
+          <div class="absolute right-0 bottom-0 w-32 h-32 bg-orange-500/20 rounded-full blur-2xl"></div>
+          <div class="relative">
+            <p class="text-orange-400 font-semibold">新品耳机</p>
+            <h3 class="text-2xl font-bold mt-2">Xiaomi Buds 5</h3>
+            <p class="text-gray-300 mt-2 text-sm">降噪升级，音质更纯净</p>
+            <a href="#" class="mt-4 inline-block text-white font-medium hover:text-orange-300 transition">
+              立即购买 →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="mt-10">
+      <div class="flex items-end justify-between mb-5">
+        <div>
+          <h2 class="text-2xl font-bold">热门推荐</h2>
+          <p class="text-gray-500 text-sm mt-1">精选爆款，智能生活一步到位</p>
+        </div>
+        <a href="#" class="text-sm text-orange-500 hover:underline">查看更多</a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 商品卡 1 -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+          <div class="bg-gray-50 p-6">
+            <img
+              src="https://images.unsplash.com/photo-1512499617640-c2f999098c2f?auto=format&fit=crop&w=900&q=80"
+              alt="手机"
+              class="w-full h-52 object-contain group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Xiaomi 15 Pro</h3>
+            <p class="text-gray-500 text-sm mt-1">徕卡影像 · 骁龙旗舰芯</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-orange-500 font-bold text-xl">¥4,499</span>
+              <button class="px-4 py-2 rounded-full bg-orange-500 text-white text-sm hover:bg-orange-600 transition">
+                购买
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 商品卡 2 -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+          <div class="bg-gray-50 p-6">
+            <img
+              src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80"
+              alt="手表"
+              class="w-full h-52 object-contain group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Xiaomi Watch S4</h3>
+            <p class="text-gray-500 text-sm mt-1">健康监测 · 长续航</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-orange-500 font-bold text-xl">¥999</span>
+              <button class="px-4 py-2 rounded-full bg-orange-500 text-white text-sm hover:bg-orange-600 transition">
+                购买
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 商品卡 3 -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+          <div class="bg-gray-50 p-6">
+            <img
+              src="https://images.unsplash.com/photo-1518441902117-f0a6a9b0f4e9?auto=format&fit=crop&w=900&q=80"
+              alt="耳机"
+              class="w-full h-52 object-contain group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Buds 5 Pro</h3>
+            <p class="text-gray-500 text-sm mt-1">主动降噪 · 沉浸音质</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-orange-500 font-bold text-xl">¥699</span>
+              <button class="px-4 py-2 rounded-full bg-orange-500 text-white text-sm hover:bg-orange-600 transition">
+                购买
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 商品卡 4 -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition group">
+          <div class="bg-gray-50 p-6">
+            <img
+              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80"
+              alt="笔记本"
+              class="w-full h-52 object-contain group-hover:scale-105 transition duration-300"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">RedmiBook Pro</h3>
+            <p class="text-gray-500 text-sm mt-1">轻薄高性能 · 学习办公</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-orange-500 font-bold text-xl">¥3,999</span>
+              <button class="px-4 py-2 rounded-full bg-orange-500 text-white text-sm hover:bg-orange-600 transition">
+                购买
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 分类推荐 -->
+    <section class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-gradient-to-r from-orange-500 to-orange-400 rounded-3xl p-8 text-white shadow-lg">
+        <p class="text-white/90 text-sm">家电推荐</p>
+        <h2 class="text-3xl font-bold mt-2">米家空调 · 冰洗厨卫</h2>
+        <p class="mt-3 text-white/90 max-w-md">
+          从客厅到厨房，打造舒适高效的智能生活空间。
+        </p>
+        <a href="#" class="inline-block mt-6 px-6 py-3 rounded-full bg-white text-orange-500 font-medium hover:bg-gray-100 transition">
+          查看家电专区
+        </a>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-sm">
+        <p class="text-orange-500 text-sm font-semibold">会员福利</p>
+        <h2 class="text-3xl font-bold mt-2">小米会员专享好礼</h2>
+        <ul class="mt-5 space-y-4 text-gray-600">
+          <li class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+            每月领券，享专属折扣
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+            新品优先购，抢先体验
+          </li>
+          <li class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+            延保服务，购买更安心
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="mt-10 bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="font-bold text-lg">小米商城</h3>
+          <p class="text-gray-500 text-sm mt-3 leading-6">
+            专注智能硬件与生活科技，打造高性价比的优质购物体验。
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">帮助中心</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-orange-500">购物指南</a></li>
+            <li><a href="#" class="hover:text-orange-500">支付方式</a></li>
+            <li><a href="#" class="hover:text-orange-500">配送方式</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">服务支持</h4>
+          <ul class="mt-3 space-y-2 text-sm text-gray-500">
+            <li><a href="#" class="hover:text-orange-500">售后政策</a></li>
+            <li><a href="#" class="hover:text-orange-500">退换货说明</a></li>
+            <li><a href="#" class="hover:text-orange-500">联系客服</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold">关注我们</h4>
+          <p class="text-gray-500 text-sm mt-3">微信公众号、微博、抖音</p>
+          <div class="mt-4 flex gap-3">
+            <span class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition cursor-pointer">微</span>
+            <span class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition cursor-pointer">博</span>
+            <span class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-orange-500 hover:text-white transition cursor-pointer">抖</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-400">
+        <p>© 2026 小米商城风格页面示例</p>
+        <p>仅用于学习与练习 HTML + CSS + Tailwind</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

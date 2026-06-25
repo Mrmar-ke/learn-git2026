@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2026 by anonymous (http://jsbin.com/xedupisijo/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+* {
+  background-color: rgba(0,0,0,0.08);
+  box-shadow: inset 0 0 1px red;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  overflow: hidden;
+  perspective: 800px;
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  
+  transform-style: preserve-3d;
+  animation: spin 12s infinite linear;
+  
+}
+
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-sizing: border-box;
+  opacity: 0.9;
+}
+/*下面一段是问ai渐变色如何实现的*/
+.front  { 
+      background: linear-gradient(to right, #000, #f00, #ff0, #0f0); 
+      transform: translateZ(100px); 
+    }
+    .back   { 
+      background: linear-gradient(to right, #00f, #f0f, #fff, #0ff); 
+      transform: rotateY(180deg) translateZ(100px); 
+    }
+    .right  { 
+      background: linear-gradient(to bottom, #0f0, #0ff, #f0f, #f00); 
+      transform: rotateY(90deg) translateZ(100px); 
+    }
+    .left   { 
+      background: linear-gradient(to bottom, #000, #00f, #f0f, #f00); 
+      transform: rotateY(-90deg) translateZ(100px); 
+    }
+    .top    { 
+      background: linear-gradient(to right, #0f0, #0ff, #fff, #f0f); 
+      transform: rotateX(90deg) translateZ(100px); 
+    }
+    .bottom { 
+      background: linear-gradient(to right, #000, #f00, #ff0, #0f0); 
+      transform: rotateX(-90deg) translateZ(100px); 
+    }
+
+@keyframes spin {
+  0% {
+    transform: rotatex(-20deg) rotatey(0deg);
+  }
+  100% {
+    transform: rotatex(-20deg) rotatey(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+  <div class="scene">
+    <div class="face front">1</div>
+    <div class="face back">2</div>
+    <div class="face right">3</div>
+    <div class="face left">4</div>
+    <div class="face top">5</div>
+    <div class="face bottom">6</div>
+    
+  </div>
+  
+</body>
+</html>
