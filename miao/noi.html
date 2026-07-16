@@ -1,0 +1,185 @@
+<script type="xxx" id="ch0103/01">
+
+
+var a = +prompt("Enter a number for a: ");
+var b = +prompt("Enter a number for b: ");
+
+var c = a + b;
+console.log("The sum of a and b is: " + c);
+</script>
+
+<script id="ch0103/02">
+
+if (a <= -10000 || a >= 10000 || b <= -10000 || b >= 10000 || c <= -10000 || c >= 10000) {
+  console.log("The numbers are too large or too small.");
+} else {
+  console.log("The numbers are within the acceptable range.");
+}
+
+var a = +prompt("Enter a number for a: ");
+var b = +prompt("Enter a number for b: ");
+var c = +prompt("Enter a number for c: ");
+
+console.log("(a + b) * c is: " + ((a + b) * c));
+
+</script>
+
+<script id="ch0103/03">
+
+if (a <= -10000 || a >= 10000 || b <= -10000 || b >= 10000 || c <= -10000 || c >= 10000) {
+  console.log("The numbers are too large or too small.");
+} else {
+  console.log("The numbers are within the acceptable range.");
+}
+
+var a = +prompt("Enter a number for a: ");
+var b = +prompt("Enter a number for b: ");
+var c = +prompt("Enter a number for c: ");
+
+console.log("(a + b) / c is: " + ((a + b) / c));
+
+</script>
+
+<script id="ch0103/04">
+
+var arr = +prompt().split(",").map(Number);
+var a = arr[0];
+var b = arr[1];
+let q = Math.floor(a / b);
+let r = a % b;
+
+if(r < 0) r += Math.abs(b);
+
+console.log("The quotient is: " + q);
+console.log("The remainder is: " + r);
+
+
+</script>
+
+<script id="ch0103/05">
+
+let [a,b] = prompt().split(",").map(Number);
+let result = a/b;
+
+console.log(result.toFixed(9));
+</script>
+
+
+<script id="ch0103/06">
+
+let [a,b] = prompt().split(",").map(Number);
+let result = a/b;
+
+printf("%%.3f", result);
+</script>
+
+
+<script id="ch0103/07">
+
+let [x,a,b,c,d] = prompt().split(",").map(Number);
+let result = (ax ** 3 + bx ** 2 + cx + d);
+console.log(result.toFixed(7));
+
+</script>
+
+<script id="ch0103/08">
+
+let f = parseFloat(prompt());
+let c = (f - 32) * 5 / 9;
+console.log(c.toFixed(5));
+</script>
+
+<script id="ch0103/09">
+var r = +prompt("Enter the radius of the circle: ");
+var l = Math.PI * r * 2;
+var area = Math.PI * r * r;
+var c = 2 * Math.PI * r;
+console.log("The circumference of the circle is: " + c);
+console.log("The area of the circle is: " + area);
+console.log("The length of the circle is: " + l);
+</script>
+
+<script id="ch0103/10">
+let [r1,r2] = prompt().split(",").map(Number);
+console.log(1/(1/r1 + 1/r2).toFixed(2));
+</script>
+
+<script id="ch0103/11">
+
+let [a,b] = prompt().split(",").map(Number);
+let k = Math.floor(a/b);
+let r = a - k*b;
+
+
+console.log("The remainder is: " + r);
+
+</script>
+
+
+<script id="ch0103/12">
+
+var r = +prompt("Enter the radius of the circle: ");
+
+const PI = 3.14;
+
+var v = (4/3) * PI * Math.pow(r, 3);
+console.log("The volume of the sphere is: " + v.toFixed(2));
+
+</script>
+
+<script id="ch0103/13">
+
+
+let n = +prompt("Enter a number: ");
+let rev = (n % 10) * 100 + (Math.floor(n / 10) % 10) * 10 + Math.floor(n / 100);
+console.log(rev);
+
+</script>
+
+<script id="ch0103/14">
+
+let [r,h] = prompt().split(",").map(Number);
+
+let v = Math.PI * Math.pow(r, 2) * h;
+console.log(Math.ceil(20000 / v));
+
+</script>
+
+<script id="ch0103/15">
+let [n,y,x] = prompt().split(",").map(Number);
+let result = (n * x) / y;
+console.log(result.toFixed(2) || y <= n * x);
+
+</script>
+
+<script id="ch0103/16">
+  let [xa,ya,xb,yb] = prompt().split(",").map(Number);
+  let d = Math.hypot(xb - xa, yb - ya);
+  console.log(d.toFixed(3));
+</script>
+
+<script id="ch0103/17">
+
+  let [x1,y1,x2,y2,x3,y3] = prompt().split(",").map(Number);
+  let s = Math.abs((x1*(y2-y3) + x2*(y3-y1) + x3*(y1-y2)) / 2);
+  console.log(s.toFixed(2));
+
+</script>
+
+<script id="ch0103/18">
+
+let [a1, a2, n] = prompt().split(",").map(Number);
+console.log((a1 + (n - 1) * a2));
+</script>  
+
+<script id="ch0103/19">
+
+  let [a, b] = prompt().split(",").map(Number);
+  console.log(a * b);
+</script>
+
+<script id="ch0103/20">
+let n = parsent(prompt());
+console.log(1 << n);
+
+</script>
