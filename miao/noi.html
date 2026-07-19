@@ -183,3 +183,316 @@ let n = parsent(prompt());
 console.log(1 << n);
 
 </script>
+
+<script id="ch104/01">
+
+  const input = prompt("Enter a number: ");
+  const n = Number(input);
+
+  if(n > 0){
+    console.log("The number is positive.");
+  }else if(n < 0){
+    console.log("The number is negative.");
+  }else{
+    console.log("The number is zero.");
+  }
+</script>
+
+<script id="ch104/02">
+
+  const input = prompt("Enter a number: ");
+  const n = Number(input);
+
+  let absValue = Math.abs(n);
+  if(n < 0){
+    absValue = -n;
+  }else {
+    absValue = n;
+  }
+  console.log("The absolute value is: " + absValue.toFixed(2));
+
+</script>
+
+<script id="ch104/03">
+
+  const input = prompt("Enter a number: ");
+  const n = Number(input);
+
+  if(n % 2 === 0){
+    console.log("The number is even.");
+  }else{
+    console.log("The number is odd.");
+  }
+</script>
+
+<script id="ch104/04">
+  const char = prompt("Enter a character: ");
+  const asciiCode = char.charCodeAt(0);
+  console.log("The ASCII code of the character is: " + asciiCode);
+</script>
+
+<script id="ch104/05">
+  const line = +prompt("请输入两个数字，用空格隔开: ");
+  const parts = line.split(" ");
+
+  const x = parseInt(parts[0]);
+  const y = parseInt(parts[1]);
+
+  if(x > y){
+    console.log(">");
+  }else if(x < y){
+    console.log("<");
+  } else {
+    console.log("=");
+  }
+</script>
+
+<script id="ch105/06">
+  function clampTo1000(num,){
+    const min = 0;
+    const max= 1000;
+
+    if(num < min){
+      return min;
+    }else if(num > max){
+      return max;
+    }else{
+      return num;
+    }
+  }
+  const num = +prompt("Enter a number: ");
+  if (num > 10 && num <= 99) {
+    console.log("这个数字是两位数");
+  } else {
+    console.log("这个数字不是两位数");
+  }
+</script>
+
+<script id="ch105/07">
+  const line1 = prompt("分别给出你拥有的印有“幸运”和“鼓励”的瓶盖数，判断是否可以去兑换大奖，用一个空格隔开: ");
+
+  const parts1 = line1.split(" ");
+  const x1 = parseInt(parts1[0]);
+  const y1 = parseInt(parts1[1]);
+
+  if(x1 >= 10 || y1 >= 20){
+    console.log("可以兑换大奖");
+  }else{
+    console.log("不能兑换大奖");
+  }
+</script>
+
+<script id="ch106/08">
+  function clampTo1000(num){
+    const min = -1000000;
+    const max= +1000000;
+
+    if(num < min){
+      return min;
+    }else if(num > max){
+      return max;
+    }else{
+      return num;
+    }
+  }
+  var num = +prompt("Enter a number: ");
+  if(num % 3 === 0 && num % 5 === 0){
+    console.log("这个数字可以被3和5整除");
+  } else {
+    console.log("这个数字不能被3和5整除");
+  }
+</script>
+
+<script id="ch104/09">
+const num = +prompt("Enter a number: ");
+if(num % 3 === 0 && num % 5 === 0 && num % 7 === 0){
+  console.log("3 5 7");
+} else if(num % 3 === 0 && num % 5 === 0){
+  console.log("3 5");
+} else if(num % 3 === 0 && num % 7 === 0){
+  console.log("3 7");
+} else if(num % 5 === 0 && num % 7 === 0){
+  console.log("5 7");
+} else if(num % 3 === 0){
+  console.log("3");
+} else if(num % 5 === 0){
+  console.log("5");
+} else if(num % 7 === 0){
+  console.log("7");
+} else {
+  console.log("n");
+}
+
+</script>
+
+<script id="ch104/10">
+  const line1 = +prompt("输入一名学生的语文和数学成绩，用空格隔开: ");
+  const parts1 = line1.split(" ");
+  const chinese = parseInt(parts1[0]);
+  const math = parseInt(parts1[1]);
+  
+  if(chinese >= 60 && math >= 60){
+    console.log("1 1");
+  } else if(chinese >= 60 && math < 60){
+    console.log("1 0");
+  } else if(chinese < 60 && math >= 60){
+    console.log("0 1");
+  } else {
+    console.log("0 0");
+  }
+</script>
+
+<script id="ch104/11">
+  const day = +prmpot("输入一个日期代表星期几:");
+  if(day == 1 && day == 3 && day == 5){
+    console.log("NO");
+  }else if(day == 2 || day == 4 || day == 6){
+    console.log("YES");
+  }
+</script>
+
+<script id="ch104/12">
+  const distance = +prompt("输入一个距离: ");
+  if(((distance % 3.0) + 50) > (distance % 1.2)){
+    console.log("BIKE");
+  } else if(((distance % 3.0) + 50) < (distance % 1.2)){
+    console.log("WALK");
+  } else {
+    console.log("ALL");
+  }
+</script>
+
+<script id="ch104/13">
+
+  const x = parseFloat(prompt("请输入一个浮点数（0 <= N < 20）"));
+
+  let y;
+
+  if(x >= 0 && x < 5){
+    y = -x + 2.5;
+  }else if(x >= 5 && x < 10){
+    y = 2 - 1.5 * (x-3) * (x-3);
+  }else if(x >= 10 && x < 20 ){
+    y = x%2 - 1.5;
+  }else{
+    console.log("超出范围");
+  }
+
+  console.log(y.toFixed(3));
+</script>
+
+<script id="ch104/14">
+
+    // 1. 获取输入并解析
+  const line = prompt("请输入重量和是否加急，以空格分隔");
+  const parts = line.trim().split(' ');
+  const weight = parseInt(parts[0]);
+  const isUrgent = parts[1];
+
+  // 2. 计算基本邮费
+  let fee = 8; // 1000克以内基本费8元
+
+  if (weight > 1000) {
+      const overWeight = weight - 1000;
+      // 关键：Math.ceil 实现"不足500克按500克计算"的向上取整
+      const extraUnits = Math.ceil(overWeight / 500);
+      fee += extraUnits * 4;
+  }
+
+  // 3. 判断是否加急
+  if (isUrgent === 'y') {
+      fee += 5;
+  }
+
+  // 4. 输出整数结果
+  console.log(fee);
+</script>
+
+<script id="ch104/15">
+
+
+    // 1. 获取输入并解析为整数
+  const line = prompt("请输入三个整数，以空格分隔");
+  
+  // 2. 求最大值并输出
+  console.log(Math.max(a, b, c));
+</script>
+
+<script id="ch104/16">
+
+  const [a, b, c] = prompt().trim().split('').map(Number);
+  const [a, b, c] = line.trim().split(' ').map(Number);
+  const max =- Math.max(a, b, c);
+  const sum = a + b + c;
+
+  console.log(sum - max > max ? 'yes' : 'no');
+
+  
+</script>
+
+<script id="ch104/17">
+
+  const year = Number(prompt().trim());
+
+  const isLeap = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+
+  console.log(isLeap ? 'y' : 'n');
+</script>
+
+<script id="ch104/18">
+
+  const [x, y] = prompt().trim().split(' ').map(Number);
+  const inSquare = (x >= -1 && x <= 1 && y >= -1 && y <= 1);
+  console.log(inSquare ? 'yes' : 'no');
+</script>
+
+<script id="ch104/19">
+  const parts = prompt().trim().split(' ');
+  const a = Number(parts[0]);
+  const b = Number(parts[1]);
+  const c = Number(parts[2]);
+  const op = parts[2];
+
+  if(op !== '+' && op !== '-' && op !== '*' && op !== '/'){
+    console.log('Invalid operator!');
+  } else if(op === '/' && b === 0){
+    console.log('Divided by zero!');
+  } else {
+    let result;
+    if(op === '+'){
+      result = a + b;
+    } else if(op === '-'){
+      result = a - b; 
+    } else if(op === '*'){
+      result = a * b;
+    } else {
+      result = Mathtrunc(a / b);
+    }
+    console.log(result);
+  }
+</script>
+
+<script id="ch104/20">
+  const [a, b, c] = prompt().trim().split(' ').map(Number);
+  const delta = b * b - 4 * a * c;
+  const twoA = 2 * a;
+  
+  if(delta === 0){
+    const x = (-b / twoA).toFixed(5);
+    console.log('x1=x2' + x);
+
+  } else if(delta > 0){
+    const sqrtD = Math.sqrt(delta);
+    const x1 = ((-b + squrtD / twoA).toFixed(5));
+    const x2 = ((-b - squrtD / twoA).toFixed(5));
+
+    console.log('x1=' + x1);
+    console.log('x2=' + x2);
+  } else {
+    const real = (-b / twoA).toFixed(5);
+    const imag = (Math.sqrt(-delta) / twoA).toFixed(5);
+    console.log('x1=' + real)
+    console.log('x2=' + (real - imag));
+
+  }
+</script>
