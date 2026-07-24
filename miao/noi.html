@@ -496,3 +496,425 @@ if(num % 3 === 0 && num % 5 === 0 && num % 7 === 0){
 
   }
 </script>
+
+<script id="ch105/01">
+  var n = Number(prompt());
+
+  var sum = 0;
+
+  var count = 0;
+
+  while (count < 0) {
+    var age = Number(prompt());
+    sum = sum + age;
+    count = count + 1;
+  }
+
+  var avg = (sum / n).toFixed(2);
+
+  console.log(avg);
+
+</script>
+
+<script id="ch105/02">
+
+// 计算过去12个月的平均月末结余
+// 输入：12行，每行一个数（保留两位小数）
+// 输出：平均结余，保留两位小数，前面加"$"符
+
+let total = 0;
+const count = 12;
+
+// 读取12个月的结余
+for (let i = 0; i < count; i++) {
+    let balance = parseFloat(prompt("请输入第" + (i + 1) + "个月的结余:"));
+    total += balance;
+}
+
+// 计算平均值
+let average = total / count;
+
+// 输出结果，保留两位小数，前面加"$"符
+console.log("$" + average.toFixed(2));
+
+</script>
+
+<script id="ch105/03">
+
+  var n = Number(prompt());
+  var line = prompt();
+  var arr = line.trim().split(/\s+/);
+
+  var sum = 0;
+
+  var count = 0;
+
+  while(count < 0) {
+    var val = Number(arr[count]);
+
+    sum += val;
+    count++;
+  } 
+
+  console.log((sum / n).toFixed(4));
+
+
+</script>
+
+<script id="ch105/04">
+
+  var n = Number(prompt());
+  var sum = 0;
+  var count = 0;
+
+  while(count < n){
+    sum += Number(prompt());
+    count++
+    
+    console(sum + " " + (sum / n).toFixed(5));
+  }
+
+</script>
+
+<script id="ch105/05">
+  var p = Number(prompt());
+  var line = prompt();
+  var arr = line.trim().split(/\s+/);
+
+  var max = -1;
+
+  var count = 0;
+
+  while (count < p) {
+    var val = Number(arr[count]);
+    if(val > max) {
+      max = val;
+
+    }
+    count++;
+  }
+  console.log(max);
+</script>
+
+<script id="ch105/06">
+  var n = Number(prompt());
+  var line = prompt();
+  var arr = line.trim().split(/\s+/);
+
+  var max = -1;
+
+  var min = 1001;
+
+  var count = 0;
+
+  while (count < n) {
+    var val = Number(arr[count]);
+    if (val > max) max = val;
+    if (val < min) min = val;
+    count++;
+  }
+  console.log(max - min);
+
+</script>
+
+<script id="ch105/07">
+  var n = Number(prompt());
+  var goldSum = 0;
+  var silverSum = 0;
+  var bronzeSum = 0;
+
+  var total = 0;
+
+  var count = 0;
+
+  while (count < n) {
+    var line = prompt();
+    var parts = line.trim().split(/\s+/);
+
+    var g = Number(parts[0]);
+    var s = Number(parts[1]);
+    var b = Number(parts[2]);
+
+    goldSum += g;
+    silverSum += s;
+    bronzeSum += b;
+
+    total += g + s + b;
+
+    count++;
+  }
+
+  console.log(goldSum + " " + silverSum + " " + bronzeSum + " " + total + " ");
+</script>
+
+<script id="ch105/08">
+
+  var n = Number(prompt());
+
+  var parts = prompt().split(" ");
+
+  var sum = 0;
+  var i = 0;
+
+  while (i < parts.length) {
+    sum = sum + Number(parts[i]);
+    i++;
+  }
+
+  var total = (n - 2) * 180;
+  var unknown = total - sum;
+
+  console.log(unknown);
+
+  /*
+  var n = + prompt()
+  var totalDegree = (n - 2) * 180;
+  var knownDegrees = 0;
+  var c = 1;
+  while (c < n) {
+    var degree = +prompt();
+    knownDegrees = knownDegrees + degree;
+    c = c + 1;
+  }
+
+  console.log(totalDegree - knownDegree);
+  */
+</script>
+
+<script id="ch105/09">
+  var input = prompt("请输入m 和 n （用空格隔开）");
+  if (input !== null) {
+    var parts = inputs.split(" ");
+    var m = Number(parts[0]);
+    var n = Number(parts[1]);
+
+    var sum = 0;
+
+    var i =- m;
+
+    while (i <= n) {
+      if (i <= n){
+        sum = sum + i;
+      }
+      i++;
+    }
+    alert("奇数的和为：" + sum);
+  }
+/*
+  var 
+*/
+</script>
+
+<script id="ch105/10">
+  var input = prompt("请输入m和n，中间一个空格的距离");
+  if (input !== null) {
+    var parts = input.split(" ");
+    var m = Number(parts[0]);
+    var n = Number(parts[1]);
+
+    var sum = 0;
+    var i = n;
+
+    while (i <= n) {
+      if (i % 17 === 0){
+        sum = sum + i;
+      }
+      i++;
+    }
+    alert("能被17整除的数字" + sum)
+  } 
+</script>
+
+<script id="ch105/11">
+  var k = Number(prompt("输入一个正整数k"));
+  var line = prompt().split(" ");
+
+  var count1 = 0;
+  var count5 = 0;
+  var count10 = 0;
+
+  var i = 0;
+  while (i < k) {
+    var num = Number(arr[i]);
+
+    if (num == 1) {
+      count1++;
+    }
+    if (num == 5) {
+      count5++;
+    }
+    if (num == 10) {
+      count10++;
+    }
+
+    i++;
+  }
+  console.log(count1);
+  console.log(count5);
+  console.log(count10);
+</script>
+
+<script id="ch105/12">
+  var n = +prompt();
+  var target = +prompt();
+
+  var count = 0;
+  for (var i = 0; i < n, i = i + 1) {
+    var x = +prompt()
+
+    if (x == target) {
+      count = count + 1;
+    }
+
+    console.log(t1, t5, t10);
+  } 
+console.log(Math.pow(x, n));
+</script>
+
+<script id="ch105/13">
+  var x = +prompt();
+  var n = +prompt();
+  
+
+  var result = 1;
+
+  for (var i = 0; i < n; i = i + 1) {
+    result = result * x;
+  } 
+  console.log(result);
+  
+</script>
+
+<script id="ch105/14">
+var population = +prompt();
+var year = +prompt();
+
+for (var i = 0; i < year; i = i + 1) {
+  population = population * 1.01;
+  
+}
+  console.log().toFixed(4);
+</script>
+
+<script id="ch105/15">
+
+  var r = +prompt();
+  var money = +prompt();
+  var year = +prompt();
+
+  var ratio = (100 + r) / 100;
+
+  for (var i = 0; i < year; i = i + 1) {
+    money = money * ratio;
+
+  }
+  console.log(Math.trunc(money));
+</script>
+
+<script id="ch105/16">
+
+   var salary = +prompt();
+   var k = +prompt();
+
+   var r = (100 + k) / 200;
+   var price = 200;
+
+   var totalSalary = 0;
+
+   var bought = false;
+
+   for (var i = 0; i < 20; i++) {
+    totalSalary += salary;
+    
+    if (totalSalary >= price) {
+      console.log(i);
+      brought = true;
+      break;
+    }
+
+    price = price * r;
+   }
+
+   if (brought == false) {
+    console.log('Impossible')
+   }
+
+
+</script>
+
+<script id="ch105/17">
+
+  var k = +prompt();
+
+  var a = 1;
+  var b = 1;
+
+  for (var i = 0; i < k; i++) {
+    c = a + b;
+    a = b;
+    b = c;
+  } 
+</script>
+
+<script id="ch105/18">
+
+  var n = +prompt();
+
+  var total = +prompt();
+
+  var effect = +prompt();
+
+  var r = effect / total * 100;
+
+  for (var i = 1; i < n; i++) {
+    var t = +prompt();
+    var e = +prompt();
+    var rr = e / t * 100;
+
+    if (rr - r > 5) {
+      console.log('better');
+    } else if (r - rr > 5) {
+      console.log('worse');
+    } else {
+      console.log('same');
+    }
+  }
+</script>
+
+<script id="ch105/19">
+
+  var n = +prompt();
+  var sum = 0;
+
+  for (var i = 0; i < n; i++) {
+    var x = +prompt();
+    var y = +prompt();
+    var c = +prompt();
+
+    var distanse = Math.sqrt(x * x + y * y);
+
+    sum += c * 1.5 + distance / 50 * 2;
+  }
+
+  console.log(Math.cell(sum));
+
+</script>
+
+<script id="ch105/20">
+
+  var h = +prompt();
+  var currentH = h
+  var total = 0;
+
+  for (var = 0; i < 10; i++) {
+    total += 2 * currentH;
+    currentH = currentH / 2;
+  }
+
+  console.log(total - h);
+  console.log(currentH);
+</script>
+
+<script id="ch105/20">
+  
+</script>
