@@ -783,6 +783,21 @@ console.log(Math.pow(x, n));
   } 
   console.log(result);
   
+  /*
+  var n = +prompt()
+  var target = +prompt()
+  var count = 0
+
+  for (var i = 0; i < n; i = i + 1) {
+    var x = +prompt()
+
+    if (x == target) {
+      count = count + 1
+    } 
+
+  }
+  console.log(count)
+  */
 </script>
 
 <script id="ch105/14">
@@ -917,4 +932,252 @@ for (var i = 0; i < year; i = i + 1) {
 
 <script id="ch105/20">
   
+</script>
+
+<script id="ch105/21">
+  
+</script>
+
+<script id="ch105/22">
+  
+</script>
+
+<script id="ch105/23">
+  var stock = +prompt();
+  var p = +prompt();
+  var count = 0;//记录没去上药的人数
+  for (var i = 0; i < p; i++){
+    var need = +prompt();
+    if (stock >= need) {
+      stock -= need;
+    } else {
+      count++;
+    }
+  }
+  console.log(count)
+</script>
+
+<script id="ch105/24">
+
+  var n = +prompt();
+  var thisCount = 0;
+  var max = 0;
+
+  for (var i = 0; i < n; i++) {
+    var a = +prompt();
+    var b = +prompt();
+
+    if (a >= 90 && a <= 180 && b >= 60 && b <= 90) {
+      thisCount++;
+      if (thisCount > max) {
+        max = thisCount
+      }
+      
+    } else {
+      thisCount = 0;
+    }
+  } 
+</script>
+
+<script id="ch105/25">
+
+for (var i = 81; i <= 6 * 49 + 6 * 7; i++) {
+  var a1 = i % 7
+  var a2 = (i - a1) / 7 % 7
+  var a3 = (i - a1 - a2 * 7) / 7 / 7 % 7
+
+  var b1 = i % 9
+  var b2 = (i - b1) / 9 % 9
+  var b3 = (i - b1 - b2 * 9) / 9 / 9 % 9
+
+  if (a1 == b3 && a2 == b2 && a3 == b1) {
+    break;
+  }
+}
+
+console.log(i)
+console.log('' + a3 + a2 + a1)
+console.log('' + b3 + b2 + b1)
+</script>
+
+<script id="ch105/26">
+  var n = +prompt()
+
+  while (xx) {
+    var d = n % 10;
+    console.log(d)
+
+    n = (n - d) / 10;
+  }
+</script>
+
+<script id="ch105/27">
+
+</script>
+
+<script id="ch105/28">
+  
+</script>
+
+<script id="ch105/29">
+  var n = +prompt();
+
+  var sign = 1;
+
+  if (n < 0) {
+    m = -n;
+    sign = -1;
+  }
+
+
+  var s = 0;
+
+  while (n > 0) {
+    var d = n % 10;
+
+    s = s * 10 + d;
+
+    n = (n - d) / 10;
+  }
+
+  console.log(s)
+</script>
+
+<script id="ch105/30">
+  
+</script> 
+
+<script id="ch105/31">
+  var n = +prompt()
+  var m = +prompt()
+
+  var result = ''
+
+  var 是否遇到第一盏灯 = false
+
+  for (var i = 1; i <= n; i++) {
+    var isOn = true
+    for (var p = 1; p <= m; p++) {//p是person
+      if (i % p == 0) {
+        isOn = !isOn
+      }
+    }
+    if (isOn = false) {
+      if (这是最后一个灯 = false) {
+        result += i
+
+      } else {
+        result +=  ',' + i
+      }
+      是否遇到第一盏 = true
+    }
+  }
+
+  console.log(result)
+
+
+</script>
+
+<script id="ch105/32">
+  var n = +prompt();
+  let p = 1
+  let q = 2
+  let sum = 0;
+  
+  for (var i = 1; i < n; i++) {
+    sum += q / p;
+    [q, p] = [q + p, q];
+  }
+</script>
+
+console.log(sum.toFixed(4));
+
+<script id="ch105/33">
+  var n = +prompt();
+
+  let sum = 0;
+  let sign = 1;
+
+  for(let i =1; i <= n; i++) {
+    sum += sign * (1 / i);
+    sign = -sign
+  }
+
+  console.log(sum.toFixed(4))
+
+</script>
+
+<script id="ch105/34">
+  var n = +prompt()
+  var sum = 0
+  var factorial = 1
+  
+  for (var i = 1; i <= n; i++) {
+    factorial = factorial * i
+    sum = sum + factorial
+  }
+
+  console.log(sum)
+</script>
+
+<script id="ch105/35">
+  var n = +prompt()
+  var sum = 0
+
+  var factorial = 1
+
+  for (var i = 1; i <= n; i++) {
+    factorial = factorial * i
+    sum += 1 / factorial
+  }
+
+  console.log(toFixed(10))
+</script>
+
+<script id="ch105/36">
+  var line = readline().split(' ')
+  var x = parseFloat(line[0])
+  var n = parseFloat(line[1])
+
+  var sum = 1
+
+  for (var i = 1; i <= n; i++) {
+    sum = sum * x + 1
+  }
+
+  console.log(n.toFixed(2))
+
+</script>
+
+<script id="ch105/37">
+  var line = readline().split(' ')
+  var M = parsent(line[0])
+  var N = parsent(line[1])
+  var X = parsent(line[2])
+
+  var curN = N
+
+  var ramainX = X
+
+  while (true) {
+    var need = Math.ceil(M / curN);
+
+    if (remainX < need) {
+      break;
+    }
+
+    remainX -= need;
+
+
+    var gain = Math.floor(M / curN);
+
+    curN += gain
+  }
+
+  console.log(curN)
+  
+</script>
+
+<script id="ch105/38">
+
 </script>
