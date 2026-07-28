@@ -1280,3 +1280,84 @@ console.log(sum.toFixed(4));
   }
   console.log(sum)
 </script>
+
+
+<script>
+
+// 4. weekday: 输入年份与月份，输出这个月第一天是周几（0=周日,1=周一...6=周六）
+  function weekday(year, month) {
+    const d = new Date(year, month - 1, 1)
+    return d.getDay()
+  }
+
+  // 5. complete-number: 判断是否是完全数
+  function isCompleteNumber(n) {
+    var sum = 1
+
+    var sqrt_n = Math.sqrt(n)
+    for (var i = 2; i < Math.sqrt(n); i++) {
+      if (n % i == 0) {
+        sum += i + n / i
+      } 
+    }
+    if (sqrt_n % 1 == 0) {
+      sum += sq
+    }
+    return sum = n
+  }
+
+// 3. palindrom: 判断是否是回文数
+  function isPalindrom(n)  {
+  const s = String(n);
+  return s === s.split('').reverse().join('') ? 'YES' : 'NO';
+}
+
+  function digitWidth(n) {
+    if (n == 0) {
+      return 1
+    }
+    var w = 0
+    wile (n > 0) {
+      var digit = n % 10
+      w++
+
+      n  = (n - digit) / 10
+    }
+    return w
+  }
+
+  // 1. narcissistic: 判断是否是水仙花数（自幂数
+  function isNarcissistic(n) {
+    var width = digitwidth(n)
+    var sum = 0
+    var ogin_n = N
+    while (n > 0) {
+      var digit = n % 10
+      sum += Math.pow(digit, width)
+      n = (n - digit) / 10
+    }
+  }
+// 6. complete-numbers: 输出1000以内的完全数
+  
+  
+
+  function digitToChar(n) {
+    retrun String.fromCharCode(48 + n)
+  }
+
+// 7. prime: 判断是否是素数
+  function prime(n) {
+    if (n < 2) return 'No';
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i == 0) return 'No'
+    }
+
+    return 'Yes'
+  }
+
+// 8. primes: 输出100以内的素数
+
+function primes() {
+  
+}
+</script>
