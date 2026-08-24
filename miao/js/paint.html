@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="1000" height="1000"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * 你的任务：通过调用dot函数，实现：
+   * 需要注意，dot函数不能接收浮点数，如果参数为浮点数，会被转换为整数后绘制
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条水平实线，粗细为一个像素
+      * 画一条垂直实线，粗细为一个像素
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴的夹角呈30度）
+      * 画一条60度的斜线（与x轴的夹角呈60度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个空心的圆，圆心在画布中心：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小位置都合适】的sin(x)的图像
+      * 画一个贝塞尔曲线（二阶或三阶均可，二阶由三个点确定，三阶由四个点确定）
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+      * 如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变换后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+
+  //在（42，42）画一个点
+  dot(42, 42)
+
+  //水平实线
+  for (var x = 100; x <= 300; x++) {
+    dot(x, 100)
+  }
+
+  //垂直实现
+
+  for (var y = 100; y <= 300; y++) {
+    dot(100, y)
+  }
+
+  //一个实点一个空点
+  for (var x = 150; x <= 350; x++) {
+    if ((x - 150) % 2 === 0) {
+      dot(x, 150)
+    }
+  }
+
+  //两个实点两个空点
+
+  for (var x = 150; x <= 350; x++) {
+    if ((x - 150) % 2 == 0){
+      dot(x, 150)
+    }
+  }
+
+
+  //三个实点两个空点
+  for (var x = 150; x <= 350; x++) {
+    if ((x - 150) % 5 < 3) {
+      dot(x, 210)
+    }
+  }
+
+  //45度斜线
+
+  for (var i = 0; i <= 200; i++) {
+    dot(150 + i, 250 + i)
+  }
+
+  //30度倾斜线
+
+  var k30 = Math.tan(30 * Math.PI / 180)
+
+
+  for (var x = 150; x <= 350; x++) {
+    var y = 700 - k30 * (x - 150)
+    dot(x, y)
+  }
+
+  //60度倾斜线
+  var k60 = Math.tan(Math.PI / 3)
+
+  for (var x = 150; x <= 350; x++) {
+    var y = 700 - k60 * (x - 150)
+    dot(x, y)
+  }
+
+  //跨越左上角和右下角的对角线
+
+  for (var i = 0; i <= 1000; i++) {
+    dot(i, i)
+  }
+
+  //空心矩阵
+
+  var left = 500
+
+  var top = 100
+  var width = 150
+  var height = 150
+
+  for (var x = left; x <= left + width; x++) {
+    dot(x, top)
+    dot(x, top + height)
+  }
+
+  for (var y = top; y <= top + height; y++) {
+    dot(left, y)
+    dot(left + width, y)
+  }
+
+  //实心矩阵
+  for (var x = 600; x <= 800; x++) {
+    for (var y = 250; y <= 330; y++) {
+      dot(x, y)
+    }
+  }
+
+
+  //半径为50的空心圆
+
+  var centerX = 500
+  var centerY = 500
+
+  var radius = 50
+
+  for (var i = 0; i < 360; i++) {
+    var angle = i * Math.PI / 180
+    var x = centerX + radius * Math.cos(angle)
+    var y = centerY + radius * Math.sin(angle)
+    dot(x, y)
+  }
+
+  //半径为200的空心圆
+  var radius = 200
+
+  for (var i = 0; i < 360; i++) {
+    var angle = i * Math.PI / 180
+    var x = centerX + radius * Math.cos(angle)
+    var y = centerY + radius * Math.sin(angle)
+    dot(x, y)
+  }
+
+  //实心圈
+
+  var radius = 100
+
+  for (var x = centerX - radius; x <= centerX + radius; x++) {
+    for (var y = centerY - radius; y <= centerY + radius; y++) {
+      if ((x - centerX) ** 2 + (y - centerY) ** 2 <= radius ** 2) {
+        dot(x, y)
+      }
+    }
+  }
+
+  //sin(x)图像
+
+  for (var x = 0; x <= 1000; x++) {
+    var y = 500 + 100 * Math.sin(x / 50)
+    dot(x, y)
+  }
+
+
+  //贝塞尔曲线
+
+  var x0 = 700, y0 = 700
+  var x1 = 800, y1 = 800
+  var x2 = 900, y2 = 900
+
+  for (var i = 0; i <= 1000; i++) {
+    var t = i / 1000
+    var x = (1 - t) ** 2 * x0 + 2 * (1 - t) * t * x1 + t ** 2 * x2
+    var y = (1 - t) ** 2 * y0 + 2 * (1 - t) * t * y1 + t ** 2 * y2
+    dot(x, y)
+  }
+
+
+  //rag 色彩空间的某一面
+
+  var size = 200
+
+  for (var x = 0; x < size; x++) {
+    for (var y = 0; y < size; y++) {
+      var r = x
+      var g = y
+      var b = 150
+
+      dot(700 + x, 100 + y, "rgb(" + r + "," + g + "," + b + ")")
+    }
+  }
+
+</script>
+</html>
